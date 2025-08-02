@@ -66,6 +66,9 @@ body {
 #page2 {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #title {
@@ -133,4 +136,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#canvas-container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid #cad3f5;
 }
