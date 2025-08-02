@@ -107,6 +107,26 @@ body {
     width: 100px;
     height: 30px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setting-div:hover {
+    background-color: #c6a0f6;
+}
+
+#size-input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#size-input::-webkit-outer-spin-button,
+#size-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .setting-text {
@@ -125,6 +145,10 @@ body {
     margin-top: 23px;
 }
 
+#clear:hover, #save:hover {
+    background-color: #8bd5ca;
+}
+
 #clear, #save {
     color: #24273a;
     background-color: #a6da95;
@@ -136,17 +160,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #canvas-container {
     width: 550px;
     height: 550px;
-    border: 1px solid #cad3f5;
+    border: 0.1px solid #cad3f5;
     display: flex;
     flex-wrap: wrap;
 }
 
 .square {
     box-sizing: border-box;
-    border: 1px solid #cad3f5;
+    border: 0.1px solid #cad3f5;
 }
