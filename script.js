@@ -10,21 +10,31 @@ let gridIndex = 0;
 const brightnessOptions = ['none', 'darken', 'lighten'];
 let brightnessIndex = 0;
 
+const catppuccinColors = ['#f0c6c6', '#f5bde6', '#c6a0f6', '#ed8796', '#ee99a0', '#f5a97f', 
+                            '#eed49f', '#a6da95', '#8bd5ca', '#91d7e3', '#7dc4e4', '#8aadf4', '#b7bdf8'];
+
 function createGrid(size) { 
     const canvasContainer = document.querySelector('#canvas-container');
     canvasContainer.innerHTML = '';
     let squareSize = 550 / size;
+    let isDrawing = false;
     for(let i = 0; i < size * size; i++){
         let square = document.createElement('div');
         square.classList.add('square');
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
-        square.addEventListener('mouseenter', () => {
-            square.style.backgroundColor = '#363a4f';
+        square.addEventListener('mousedown', () => {
+            applyColor(square);
+            isDrawing = true;
         });
-        square.addEventListener('mouseleave', () => {
-            square.style.backgroundColor = '#24273a';
-        });       
+        square.addEventListener('mouseover', () => {
+            if(isDrawing == true){
+                applyColor(square);
+            }
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
+        });
         canvasContainer.appendChild(square);
     }
 }
@@ -33,6 +43,18 @@ function changeColor(){
     colorIndex = (colorIndex + 1) % colorOptions.length;
     const newColor = colorOptions[colorIndex];
     colorButton.textContent = newColor;
+}
+
+function applyColor(squareElement){
+    let square = document.querySelector('.square');
+    if(colorIndex == 0){
+        let randomColor = Math.floor(Math.random() * catppuccinColors.length);
+        squareElement.style.backgroundColor = catppuccinColors[randomColor];
+    } else if(colorIndex == 1){
+
+    } else{
+
+    }
 }
 
 function changeMode(){
