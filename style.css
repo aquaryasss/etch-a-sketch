@@ -139,7 +139,14 @@ body {
 }
 
 #canvas-container {
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
+    border: 1px solid #cad3f5;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    box-sizing: border-box;
     border: 1px solid #cad3f5;
 }
