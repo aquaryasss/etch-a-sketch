@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Ahsing'; /* this is the name you will use in your css. */
+  src: 
+    url('../fonts/ahsing-regular-webfont.woff2') format('woff2'), /* modern browsers */
+    url('../fonts/ahsing-regular-webfont.woff') format('woff');  /* older browsers */
+}
+
+@font-face {
+  font-family: 'Bukhari Script'; /* this is the name you will use in your css. */
+  src: 
+    url('../fonts/bukhari_script-webfont.woff2') format('woff2'), /* modern browsers */
+    url('../fonts/bukhari_script-webfont.woff') format('woff');  /* older browsers */
+}
+
+@font-face {
+  font-family: 'Montserrat'; /* this is the name you will use in your css. */
+  src: 
+    url('../fonts/Montserrat-Regular.woff2') format('woff2'), /* modern browsers */
+    url('../fonts/Montserrat-Regular.woff') format('woff');  /* older browsers */
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #c5cff4;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+#book-outline {
+    background-color: #f5bde6;
+    border-radius: 40px;
+    width: 75vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.page {
+    background-color: #24273a;
+    width: 47%;
+    height: 90%;
+}
+
+#page1 {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#page2 {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#title {
+    color: #eed49f;
+    font-family: 'Ahsing', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#settings {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.setting {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.setting-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8aadf4;
+    color: #24273a;
+    border-radius: 16px;
+    padding: 2px 30px 2px 30px;
+    margin: 0;
+    width: 100px;
+    height: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.setting-text {
+    color: #f5a97f;
+    font-family: 'Bukhari Script', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 27px;
+    margin-top: 23px;
+}
+
+#clear, #save {
+    color: #24273a;
+    background-color: #a6da95;
+    font-family: 'Montserrat', sans-serif;
+    width: 100px;
+    height: 35px;
+    padding: 2px 30px 2px 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
