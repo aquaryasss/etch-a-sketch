@@ -180,3 +180,36 @@ body {
 .square:hover {
     background-color: #363a4f;
 }
+
+#picker-palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #363a4f;
+    border-radius: 8px;
+}
+
+.palette-choice {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #4d5066;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.palette-choice:hover {
+    transform: scale(1.1);
+}
+
+.palette-choice.selected {
+    border-color: #f5bde6;
+    transform: scale(1.2);
+}
+
+.hidden{
+    display: none !important;
+}

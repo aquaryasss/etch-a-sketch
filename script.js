@@ -1,4 +1,4 @@
-const colorOptions = ['catppuccin', 'picker', 'dark'];
+const colorOptions = ['random', 'picker', 'moon'];
 let colorIndex = 0;
 
 const modeOptions = ['draw', 'erase'];
@@ -12,12 +12,18 @@ let brightnessIndex = 0;
 
 const catppuccinColors = ['#f0c6c6', '#f5bde6', '#c6a0f6', '#ed8796', '#ee99a0', '#f5a97f', 
                             '#eed49f', '#a6da95', '#8bd5ca', '#91d7e3', '#7dc4e4', '#8aadf4', '#b7bdf8'];
+let pickedColor = catppuccinColors[0];
+
+let isDrawing = false;
+
+window.addEventListener('mouseup', () => {
+    isDrawing = false;
+});
 
 function createGrid(size) { 
     const canvasContainer = document.querySelector('#canvas-container');
     canvasContainer.innerHTML = '';
     let squareSize = 550 / size;
-    let isDrawing = false;
     for(let i = 0; i < size * size; i++){
         let square = document.createElement('div');
         square.classList.add('square');
@@ -32,9 +38,6 @@ function createGrid(size) {
                 applyColor(square);
             }
         });
-        square.addEventListener('mouseup', () => {
-            isDrawing = false;
-        });
         canvasContainer.appendChild(square);
     }
 }
@@ -43,6 +46,11 @@ function changeColor(){
     colorIndex = (colorIndex + 1) % colorOptions.length;
     const newColor = colorOptions[colorIndex];
     colorButton.textContent = newColor;
+    if (newColor == 'picker'){
+        palettePicker.classList.remove('hidden');
+    }else{
+        palettePicker.classList.add('hidden');
+    }
 }
 
 function applyColor(squareElement){
@@ -51,7 +59,7 @@ function applyColor(squareElement){
         let randomColor = Math.floor(Math.random() * catppuccinColors.length);
         squareElement.style.backgroundColor = catppuccinColors[randomColor];
     } else if(colorIndex == 1){
-
+        squareElement.style.backgroundColor = pickedColor;
     } else{
 
     }
@@ -85,6 +93,26 @@ function changeSize(){
     }
 }
 
+function createPalette(){
+    catppuccinColors.forEach(color => {
+        const swatch = document.createElement('div');
+        swatch.classList.add('palette-choice');
+        swatch.style.backgroundColor = color;
+        swatch.addEventListener('click', () => {
+            pickedColor = color;
+            const currentSelected = document.querySelector('.palette-choice.selected');
+            if(currentSelected)
+                currentSelected.classList.remove('selected');
+            swatch.classList.add('selected');
+        });
+        palettePicker.appendChild(swatch);
+    });
+    if(palettePicker.firstChild)
+        palettePicker.firstChild.classList.add('selected');
+    palettePicker.classList.add('hidden');
+        
+}
+
 const colorButton = document.querySelector('#color-div');
 colorButton.addEventListener('click', () => {
     changeColor();
@@ -110,4 +138,7 @@ sizeInput.addEventListener('change', () => {
     changeSize();
 });
 
+const palettePicker = document.querySelector('#picker-palette');
+
+createPalette();
 createGrid(parseInt(sizeInput.value));
