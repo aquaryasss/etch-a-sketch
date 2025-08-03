@@ -25,12 +25,12 @@ window.addEventListener('mouseup', () => {
 function createGrid(size) { 
     const canvasContainer = document.querySelector('#canvas-container');
     canvasContainer.innerHTML = '';
-    let squareSize = 550 / size;
+    let squareSize = 100 / size;
     for(let i = 0; i < size * size; i++){
         let square = document.createElement('div');
         square.classList.add('square');
-        square.style.width = `${squareSize}px`;
-        square.style.height = `${squareSize}px`;
+        square.style.width = `${squareSize}%`;
+        square.style.height = `${squareSize}%`;
         square.addEventListener('mousedown', () => {
             applyColor(square);
             isDrawing = true;
@@ -59,19 +59,44 @@ function applyColor(squareElement){
     let square = document.querySelector('.square');
     if(modeIndex == 1){
         squareElement.style.backgroundColor = '#24273a';
+        squareElement.style.borderColor = '#18196';
+        squareElement.style.borderSize = '0.1px';
+        squareElement.style.opacity = 1;
         return;
     }
+    if(brightnessIndex == 1){
+        let currentOpacity = parseFloat(window.getComputedStyle(squareElement).getPropertyValue("opacity"));
+        let newOpacity = Math.max(0.1, currentOpacity - 0.1);
+        squareElement.style.opacity = newOpacity;
+        return; 
+    } else if(brightnessIndex == 2){
+        let currentOpacity = parseFloat(window.getComputedStyle(squareElement).getPropertyValue("opacity"));
+        let newOpacity = Math.min(1, currentOpacity + 0.1);
+        squareElement.style.opacity = newOpacity;
+        return;
+    }
+    squareElement.style.opacity = 1;
     if(colorIndex == 0){
-        let randomColor = Math.floor(Math.random() * catppuccinColors.length);
-        squareElement.style.backgroundColor = catppuccinColors[randomColor];
+        colorMode(squareElement, 0);
     } else if(colorIndex == 1){
-        squareElement.style.backgroundColor = pickedColor;
+        colorMode(squareElement, 1);
     } else if(colorIndex == 2){
-        let randomMoonColor = Math.floor(Math.random() * moonColors.length);
-        squareElement.style.backgroundColor = moonColors[randomMoonColor];
+        colorMode(squareElement, 2);
     } else if(isErasing == true){
         squareElement.style.backgroundColor = '#24273a';
     }
+}
+
+function colorMode(squareElement, indexNum){
+    if(indexNum == 0){
+        let randomColor = Math.floor(Math.random() * catppuccinColors.length);
+        squareElement.style.backgroundColor = catppuccinColors[randomColor];
+    } else if(indexNum == 1){
+        squareElement.style.backgroundColor = pickedColor;
+    } else if(indexNum == 2){
+        let randomMoonColor = Math.floor(Math.random() * moonColors.length);
+        squareElement.style.backgroundColor = moonColors[randomMoonColor];
+    } 
 }
 
 function changeMode(){
@@ -85,14 +110,15 @@ function changeGrid(){
     const newGrid = gridOptions[gridIndex];
     gridButton.textContent = newGrid;
     const allSquares = document.querySelectorAll('.square');
-    let newBorderColor;
-    if(gridIndex == 1)
-        newBorderColor = '#24273a';
-    else
-        newBorderColor = '#181926';
-    allSquares.forEach(square => {
-        square.style.borderColor = newBorderColor;
-    }); 
+    if(gridIndex == 1){
+        allSquares.forEach(square => {
+            square.style.border = 'none';
+        });
+    }else{
+        allSquares.forEach(square => {
+            square.style.border = '0.1px solid #181926';
+        });
+    }
 }
 
 function changeBrightness(){
