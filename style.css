@@ -1,22 +1,22 @@
 @font-face {
   font-family: 'Ahsing';
   src: 
-    url('../fonts/ahsing-regular-webfont.woff2') format('woff2'), /* modern browsers */
-    url('../fonts/ahsing-regular-webfont.woff') format('woff');  /* older browsers */
+    url('fonts/ahsing-regular-webfont.woff2') format('woff2'), /* modern browsers */
+    url('fonts/ahsing-regular-webfont.woff') format('woff');  /* older browsers */
 }
 
 @font-face {
   font-family: 'Bukhari Script'; /* this is the name you will use in your css. */
   src: 
-    url('../fonts/bukhari_script-webfont.woff2') format('woff2'), /* modern browsers */
-    url('../fonts/bukhari_script-webfont.woff') format('woff');  /* older browsers */
+    url('fonts/bukhari_script-webfont.woff2') format('woff2'), /* modern browsers */
+    url('fonts/bukhari_script-webfont.woff') format('woff');  /* older browsers */
 }
 
 @font-face {
   font-family: 'Montserrat'; /* this is the name you will use in your css. */
   src: 
-    url('../fonts/Montserrat-Regular.woff2') format('woff2'), /* modern browsers */
-    url('../fonts/Montserrat-Regular.woff') format('woff');  /* older browsers */
+    url('fonts/Montserrat-Regular.woff2') format('woff2'), /* modern browsers */
+    url('fonts/Montserrat-Regular.woff') format('woff');  /* older browsers */
 }
 
 
