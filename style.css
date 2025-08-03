@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Ahsing'; /* this is the name you will use in your css. */
+  font-family: 'Ahsing';
   src: 
     url('../fonts/ahsing-regular-webfont.woff2') format('woff2'), /* modern browsers */
     url('../fonts/ahsing-regular-webfont.woff') format('woff');  /* older browsers */
@@ -46,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1px;
+    gap: 2px;
 }
 
 .page {
@@ -167,14 +167,14 @@ body {
 #canvas-container {
     width: 550px;
     height: 550px;
-    border: 0.1px solid #cad3f5;
+    border: 0.1px solid #181926;
     display: flex;
     flex-wrap: wrap;
 }
 
 .square {
     box-sizing: border-box;
-    border: 0.1px solid #cad3f5;
+    border: 0.1px solid #181926;
 }
 
 .square:hover {
