@@ -60,7 +60,7 @@ function applyColor(squareElement){
     if(modeIndex == 1){
         squareElement.style.backgroundColor = '#24273a';
         squareElement.style.borderColor = '#18196';
-        squareElement.style.borderSize = '0.1px';
+        squareElement.style.borderWidth = '0.1px';
         squareElement.style.opacity = 1;
         return;
     }
@@ -183,6 +183,17 @@ sizeInput.addEventListener('change', () => {
 });
 
 const palettePicker = document.querySelector('#picker-palette');
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
+    let allSquares = document.querySelectorAll('.square');
+    allSquares.forEach(square => {
+        square.style.backgroundColor = '#24273a';
+        square.style.borderColor = '#18196';
+        square.style.borderWidth = '0.1px';
+        square.style.opacity = 1; 
+    }); 
+});
 
 createPalette();
 createGrid(parseInt(sizeInput.value));
