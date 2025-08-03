@@ -84,6 +84,15 @@ function changeGrid(){
     gridIndex = (gridIndex + 1) % gridOptions.length;
     const newGrid = gridOptions[gridIndex];
     gridButton.textContent = newGrid;
+    const allSquares = document.querySelectorAll('.square');
+    let newBorderColor;
+    if(gridIndex == 1)
+        newBorderColor = '#24273a';
+    else
+        newBorderColor = '#181926';
+    allSquares.forEach(square => {
+        square.style.borderColor = newBorderColor;
+    }); 
 }
 
 function changeBrightness(){
