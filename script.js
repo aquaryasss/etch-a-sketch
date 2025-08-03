@@ -14,7 +14,7 @@ const catppuccinColors = ['#f0c6c6', '#f5bde6', '#c6a0f6', '#ed8796', '#ee99a0',
                             '#eed49f', '#a6da95', '#8bd5ca', '#91d7e3', '#7dc4e4', '#8aadf4', '#b7bdf8'];
 let pickedColor = catppuccinColors[0];
 
-const moonColors = ['#b8c0e0', '#a5adcb', '#939ab7', '#8087a2', '#6e738d', '#5b6078', '#494d64', '#363a4f', '#1e2030'];
+const moonColors = ['#b8c0e0', '#a5adcb', '#939ab7', '#8087a2', '#6e738d', '#5b6078', '#494d64', '#1e2030'];
 
 let isDrawing = false;
 
@@ -57,14 +57,20 @@ function changeColor(){
 
 function applyColor(squareElement){
     let square = document.querySelector('.square');
+    if(modeIndex == 1){
+        squareElement.style.backgroundColor = '#24273a';
+        return;
+    }
     if(colorIndex == 0){
         let randomColor = Math.floor(Math.random() * catppuccinColors.length);
         squareElement.style.backgroundColor = catppuccinColors[randomColor];
     } else if(colorIndex == 1){
         squareElement.style.backgroundColor = pickedColor;
-    } else{
+    } else if(colorIndex == 2){
         let randomMoonColor = Math.floor(Math.random() * moonColors.length);
         squareElement.style.backgroundColor = moonColors[randomMoonColor];
+    } else if(isErasing == true){
+        squareElement.style.backgroundColor = '#24273a';
     }
 }
 
