@@ -216,7 +216,7 @@ body {
     display: none !important;
 }
 
-/*@media (max-width: 1200px) {
+@media (max-width: 1200px) {
   #book-outline {
     transform: scale(0.8);
   }
@@ -228,4 +228,4 @@ body {
   }
 }
 
-*/ 
+
