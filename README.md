@@ -1,4 +1,4 @@
-# **The Big Bang Theory: Rock, Paper, Scissors, Lizard, Spock**
+# **Etch-A-Sketch: Catppuccin**
 
 This is a browser version of something between a sketchpad and an Etch-A-Sketch. This focuses on DOM manipulation with vanilla JavaScript.
 
