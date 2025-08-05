@@ -36,13 +36,14 @@ body {
     display: flex;
     justify-content:  center;
     align-items: center;
+    overflow: hidden;
 }
 
 #book-outline {
     background-color: #f5bde6;
     border-radius: 40px;
-    width: 75vw;
-    height: 90vh;
+    width: 1300px;
+    height: 850px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,6 +171,8 @@ body {
     border: 0.1px solid #181926;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
 }
 
 .square {
@@ -213,3 +216,17 @@ body {
 .hidden{
     display: none !important;
 }
+
+/*@media (max-width: 1200px) {
+  #book-outline {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 850px) {
+  #book-outline {
+    transform: scale(0.65);
+  }
+}
+
+*/ 
