@@ -8,7 +8,7 @@ This is a browser version of something between a sketchpad and an Etch-A-Sketch.
 ### **Features**
 
 - Dynamic Grid Creation: Start with a default grid and use the size input to create a new grid of any size between 8x8 and 32x32 without refreshing the page.
-- Click-and-Drag Drawing: The computer opponent is styled as Sheldon Cooper.
+- Click-and-Drag Drawing: Drawing only happens when the mouse button is held down, allowing for precise control over strokes.
 - Different Color Modes:
     - Random: Paints with a random, vibrant color from the beautiful Catppuccin color palette with every stroke.
     - Picker: Select a specific color from a dynamic on-screen Catppuccin color palette to draw with.
